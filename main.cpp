@@ -32,15 +32,16 @@ std::vector< std::vector <int>> create_matrix(int matrix_size) {
   int count = 0;
   if (myfile.is_open()) {
     while (getline(myfile, line)) {
+      cout << line;
         if (line.length() >= 5) {
-            std::vector<int> row; // Create a new row for each line
-            std::stringstream ss(line);
-            int to_add;
-            while (ss >> to_add) { // Read integers separated by spaces
-                row.push_back(to_add); // Add integer to the row
-            }
-            my_vec.push_back(row); // Add row to the matrix
-        }
+          std::vector<int> row; // Create a new row for each line
+          std::stringstream ss(line);
+          int to_add;
+          while (ss >> to_add) { // Read integers separated by spaces
+              row.push_back(to_add); // Add integer to the row
+          }
+          my_vec.push_back(row); // Add row to the matrix
+      }
     }
     myfile.close();
   } else {
